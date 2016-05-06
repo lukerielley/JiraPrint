@@ -26,8 +26,8 @@
             }
             
             #card_body {
-                padding: 10px;
-                height: 140px;
+                padding: 0px 10px 0px 10px;
+                height: 160px;
                 overflow: hidden;
                 font-size: 10pt;
                 margin-bottom: 10px;
@@ -68,10 +68,9 @@
                 overflow: hidden;
             }
             
-            #card_description {
-                width: 100%;
+            #card_epic {
                 text-align: center;
-                font-size: 10pt;
+                font-size: 12pt;
                 overflow: hidden;
                 height: 14px;
             }
@@ -107,19 +106,23 @@
             <div id="card">
                 <div id="card_Container">
                     <div id="header">
-                        <span id="issue_number">DSP-XXXXX</span>
+                        <span id="issue_number">DSP-3431</span>
                         <span id="team_name">GRANITE</span>
                         
-                        <div id="card_title">THIS IS THE TITLE OF THE CARD AND I MADE IT REALLY LONG SO I CAN TEST WRAPPING TEXT AND HANDLE IT</div>
-                        <div id="card_description">THIS IS THE SUMMARY OF THE CARD.. fdsf sdf sd fsdfsd fsd fsd fsd fsd fsd fsd fsd fsd fsd fsdfsdfsdfsdfsdf .</div>
+                        <div id="card_title">
+                            Create Typed DTOs for endpoints
+                        </div>
+                        <div id="card_epic">
+                             Granite SWAT
+                        </div>
                     </div>
                     <div id="point_banner">
                         <div>
-                            <span>X</span> <span>Point(s)</span>
+                            <span>5</span> <span>Point(s)</span>
                         </div>
                     </div>
                     <div id="card_body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci nulla, rhoncus eget massa a, ornare lobortis mauris. Etiam vel neque non massa eleifend eleifend. Cras convallis tortor tellus, eu tempus massa rutrum ac. Aenean gravida faucibus magna ut lacinia. Ut sit amet arcu sed arcu commodo eleifend vitae vel lacus. Aliquam eros dui, malesuada in blandit vel, pretium sed nisl. Sed laoreet feugiat sollicitudin. Suspendisse in fermentum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dignissim metus eget tincidunt condimentum. Integer tincidunt consectetur mauris, et lobortis arcu blandit in. Sed quis sagittis nunc, vitae pretium ligula. dignissim metus eget tincidunt condimentum. Integer tincidunt consectetur mauris, et lobortis arcu blandit in. Sed quis sagittis nunc, vitae pretium ligula.
+                        <p>At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.</p> <p>We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.</p> <p>This includes the 'Bills' and 'Usage' endpoints</p>
                     </div>
                 </div>
             </div>
