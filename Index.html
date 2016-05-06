@@ -5,31 +5,75 @@
         
         <style>
             
-            #Card {
+            body {
+                font-family: 'Arial';
+            }
+            
+            #card {
                 /*
                 border: 1px dotted black;
                 padding: 20px;
                 width: 500px;
                 height: 300px;
                 */
+                padding-top: 30px;
             }
             
-            #Card_Container {
+            #card_Container {
                 border: 1px solid black;
                 width: 500px;
-                height: 300px;
+                /* height: 300px; */
+            }
+            
+            #card_body {
+                padding: 10px;
+                height: 140px;
+                overflow: hidden;
+                font-size: 10pt;
+                margin-bottom: 10px;
             }
             
             #header {
                 height: 100px;
+                padding: 10px;
             }
             
             #point_banner {
-                height: 30px;
-                background-color: lightblue;
+                height: 24px;
+                background-color: #0057C0;
+                color: white;
                 border-top: 1px solid black;
                 border-bottom: 1px solid black;
                 text-align: center;
+                font-size: 16pt;
+            }
+            
+            #issue_number {
+                color: #0000ff;
+                font-weight: bold;
+            }
+            
+            #team_name {
+                color: #ff0000;
+                font-weight: bold;
+                padding-left: 30px;
+            }
+            
+            #card_title {
+                width: 100%;
+                text-align: center;
+                font-size: 16pt;
+                margin-top: 10px;
+                height: 50px;
+                overflow: hidden;
+            }
+            
+            #card_description {
+                width: 100%;
+                text-align: center;
+                font-size: 10pt;
+                overflow: hidden;
+                height: 14px;
             }
             
         </style>
@@ -59,22 +103,23 @@
         <input type="text" id="feed_url" value="https://aglenergy.atlassian.net/si/jira.issueviews:issue-xml/DSP-3431/DSP-3431.xml" />
         <input type="button" onclick="getData()" value="Get data" />
         
-        <div id="Cards">
-            <div id="Card">
-                <div id="Card_Container">
+        <div id="cards">
+            <div id="card">
+                <div id="card_Container">
                     <div id="header">
-                        <div>DSP-XXXXX</div>
-                        <div>TEAM NAME</div>
-                        <div>THIS IS THE TITLE OF THE CARD...</div>
-                        <div>THIS IS THE SUMMARY OF THE CARD...</div>
+                        <span id="issue_number">DSP-XXXXX</span>
+                        <span id="team_name">GRANITE</span>
+                        
+                        <div id="card_title">THIS IS THE TITLE OF THE CARD AND I MADE IT REALLY LONG SO I CAN TEST WRAPPING TEXT AND HANDLE IT</div>
+                        <div id="card_description">THIS IS THE SUMMARY OF THE CARD.. fdsf sdf sd fsdfsd fsd fsd fsd fsd fsd fsd fsd fsd fsd fsdfsdfsdfsdfsdf .</div>
                     </div>
                     <div id="point_banner">
                         <div>
-                            <span>1</span><span>Point(s)</span>
+                            <span>X</span> <span>Point(s)</span>
                         </div>
                     </div>
-                    <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci nulla, rhoncus eget massa a, ornare lobortis mauris. Etiam vel neque non massa eleifend eleifend. Cras convallis tortor tellus, eu tempus massa rutrum ac. Aenean gravida faucibus magna ut lacinia. Ut sit amet arcu sed arcu commodo eleifend vitae vel lacus. Aliquam eros dui, malesuada in blandit vel, pretium sed nisl. Sed laoreet feugiat sollicitudin. Suspendisse in fermentum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dignissim metus eget tincidunt condimentum. Integer tincidunt consectetur mauris, et lobortis arcu blandit in. Sed quis sagittis nunc, vitae pretium ligula.
+                    <div id="card_body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci nulla, rhoncus eget massa a, ornare lobortis mauris. Etiam vel neque non massa eleifend eleifend. Cras convallis tortor tellus, eu tempus massa rutrum ac. Aenean gravida faucibus magna ut lacinia. Ut sit amet arcu sed arcu commodo eleifend vitae vel lacus. Aliquam eros dui, malesuada in blandit vel, pretium sed nisl. Sed laoreet feugiat sollicitudin. Suspendisse in fermentum nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed dignissim metus eget tincidunt condimentum. Integer tincidunt consectetur mauris, et lobortis arcu blandit in. Sed quis sagittis nunc, vitae pretium ligula. dignissim metus eget tincidunt condimentum. Integer tincidunt consectetur mauris, et lobortis arcu blandit in. Sed quis sagittis nunc, vitae pretium ligula.
                     </div>
                 </div>
             </div>
