@@ -5,6 +5,28 @@
         
         <style>
             
+            @font-face {
+                font-family: 'BrauerNeueRegular';
+                font-weight: normal;
+                font-style: normal;
+                src: url('./Content/brauerneue-regular-webfont.eot');
+                src:
+                    url('./Content/brauerneue-regular-webfont.woff') format('woff'),
+                    url('./Content/brauerneue-regular-webfont.ttf') format('truetype'),
+                    url('./Content/brauerneue-regular-webfont.svg') format('svg');
+            }
+
+            @font-face {
+                font-family: 'BrauerNeueBold';
+                font-weight: normal;
+                font-style: normal;
+                src: url('./Content/brauerneue-bold-webfont.eot');
+                src:
+                    url('./Content/brauerneue-bold-webfont.woff') format('woff'),
+                    url('./Content/brauerneue-bold-webfont.ttf') format('truetype'),
+                    url('./Content/brauerneue-bold-webfont.svg') format('svg');
+            }
+            
             body {
                 font-family: 'Arial';
             }
@@ -66,6 +88,7 @@
                 margin-top: 10px;
                 height: 50px;
                 overflow: hidden;
+                font-family: BrauerNeueBold;
             }
             
             #card_epic {
@@ -73,6 +96,7 @@
                 font-size: 12pt;
                 overflow: hidden;
                 height: 14px;
+                font-family: BrauerNeueBold;
             }
             
         </style>
