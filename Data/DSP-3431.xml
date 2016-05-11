@@ -6,6 +6,9 @@ For example, to request only the issue key and summary add field=key&field=summa
 For example:
 https://aglenergy.atlassian.net/si/jira.issueviews:issue-xml/DSP-3431/DSP-3431.xml?field=key&amp;field=summary
 -->
+
+<?xml-stylesheet href="style.xsl" type="text/xsl"?>
+
 <rss version="0.92" >
 <channel>
     <title>JIRA</title>
