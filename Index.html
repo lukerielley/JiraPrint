@@ -32,24 +32,42 @@
             }
             
             #cards {
-                border: 1px solid red;
+                width: 1050px;
+                        
             }
             
-            #card {
+            .card {
+                
+                border: 1px solid black;
+                width: 490px;
+                height: 300px;
+                position: relative;
+                float: left;
                 /*
                 border: 1px dotted black;
                 padding: 20px;
                 width: 500px;
                 height: 300px;
-                */
                 padding-top: 30px;
-                border: 1px solid green;
+                */
+            }
+            
+            .topleft {
+                
+            }
+            .topright {
+                margin-left: 20px;
+            }
+            .bottomleft {
+                margin-top: 20px;
+            }
+            .bottomright {
+                margin-left: 20px;
+                margin-top: 20px;
             }
             
             #card_Container {
-                border: 1px solid black;
-                width: 500px;
-                /* height: 300px; */
+                
             }
             
             #card_body {
@@ -103,6 +121,10 @@
                 height: 14px;
             }
             
+            .newpage {
+                height: 30px;   
+            }
+            
             @media print {
                 
                 #config {
@@ -111,6 +133,10 @@
                 
                 div {
                     page-break-inside: avoid;
+                }
+                
+                .newpage {
+                    page-break-after: always;
                 }
             }
             
@@ -126,10 +152,41 @@
             <br />
             <input type="button" data-bind="click: processData" value="Create cards!" />
         </div>
-        
+
         <div id="cards" data-bind="foreach: cards">
+            
+            <!-- ko if: ($index() % 4) == 0 -->
+            <div class="card topleft">
+                
+            </div>
+            <!-- /ko -->
+            
+            <!-- ko if: ($index() % 4) == 1 -->
+            <div class="card topright">
+                
+            </div>
+            <!-- /ko -->
+            
+            <!-- ko if: ($index() % 4) == 2 -->
+            <div class="card bottomleft">
+                
+            </div>
+            <!-- /ko -->
+            
+            <!-- ko if: ($index() % 4) == 3 -->
+            <div class="card bottomright">
+                
+            </div>
+            <div class="newpage">
+                
+            </div>
+            <!-- /ko -->
+            
+            <!--
             <div id="card">
+                
                 <div id="card_Container">
+                    
                     <div id="header">
                         <span id="issue_number">DSP-3431</span>
                         <span id="team_name">GRANITE</span>
@@ -137,20 +194,23 @@
                         <div id="card_title" data-bind="text: title">
                             
                         </div>
-                        <div id="card_epic">
+                        <div id="card_epic"" data-bind="text: epic">
                             
                         </div>
                     </div>
                     <div id="point_banner">
                         <div>
-                            <span>5</span> <span>Point(s)</span>
+                            <span data-bind="text: storypoints"></span> <span>Point(s)</span>
                         </div>
                     </div>
-                    <div id="card_body">
+                    <div id="card_body"  data-bind="html: details">
                         
                     </div>
                 </div>
+                
             </div>
+            -->
+            
         </div>
         
         
@@ -167,27 +227,38 @@
                     self.cards.push(
                         { 
                             title: "Card Title 1", 
-                            epic: "Epic Title 1"
+                            epic: "Epic Title 1",
+                            storypoints: 3,
+                            details: "<p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p>"
+                            
                         });
                     self.cards.push(
                         { 
                             title: "Card Title 2", 
-                            epic: "Epic Title 2"
+                            epic: "Epic Title 2",
+                            storypoints: 3,
+                            details: "<p>At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.</p> <p>We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.</p> <p>This includes the 'Bills' and 'Usage' endpoints</p>"
                         });
                     self.cards.push(
                         { 
                             title: "Card Title 2", 
-                            epic: "Epic Title 2"
+                            epic: "Epic Title 2",
+                            storypoints: 3,
+                            details: "<p>At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.</p> <p>We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.</p> <p>This includes the 'Bills' and 'Usage' endpoints</p>"
                         });
                     self.cards.push(
                         { 
                             title: "Card Title 2", 
-                            epic: "Epic Title 2"
+                            epic: "Epic Title 2",
+                            storypoints: 3,
+                            details: "<p>At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.</p> <p>We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.</p> <p>This includes the 'Bills' and 'Usage' endpoints</p>"
                         });
                     self.cards.push(
                         { 
                             title: "Card Title 2", 
-                            epic: "Epic Title 2"
+                            epic: "Epic Title 2",
+                            storypoints: 3,
+                            details: "<p>At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.</p> <p>We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.</p> <p>This includes the 'Bills' and 'Usage' endpoints</p>"
                         });
                 }
                 
