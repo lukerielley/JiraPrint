@@ -43,13 +43,6 @@
                 height: 300px;
                 position: relative;
                 float: left;
-                /*
-                border: 1px dotted black;
-                padding: 20px;
-                width: 500px;
-                height: 300px;
-                padding-top: 30px;
-                */
             }
             
             .topleft {
@@ -72,53 +65,59 @@
             
             #card_body {
                 padding: 0px 10px 0px 10px;
-                height: 160px;
+                height: 150px;
                 overflow: hidden;
-                font-size: 10pt;
+                font-size: 9pt;
                 margin-bottom: 10px;
             }
             
             #header {
-                height: 100px;
-                padding: 10px;
+                height: 50px;
+                padding: 5px;
             }
             
-            #point_banner {
-                height: 24px;
-                background-color: #0057C0;
-                color: white;
+            #title_banner {
+                height: 60px;
+                background-color: #deeaf6;
                 border-top: 1px solid black;
                 border-bottom: 1px solid black;
                 text-align: center;
-                font-size: 16pt;
+                font-size: 18pt;
+                font-family: BrauerNeueBold;
+                overflow: hidden;
             }
             
             #issue_number {
-                color: #0000ff;
+                color: #2E74B5;
                 font-weight: bold;
+                width: 100px;
+                float: left;
             }
             
             #team_name {
                 color: #ff0000;
                 font-weight: bold;
-                padding-left: 30px;
+                text-align: center;
+                width: 272px;
+                float: left;
             }
             
-            #card_title {
-                width: 100%;
-                text-align: center;
-                font-size: 16pt;
-                margin-top: 10px;
-                height: 50px;
-                overflow: hidden;
-                font-family: BrauerNeueBold;
+            #story_points {
+                font-size: 2.8em;
+                float: right;
+                width: 100px;
+                font-weight: bold;
+                text-align: right;
             }
             
             #card_epic {
                 text-align: center;
-                font-size: 12pt;
+                font-size: 11pt;
                 overflow: hidden;
-                height: 14px;
+                padding: 2px;
+                color: #ff0000;
+                font-style: italic;
+                font-weight: bold;
             }
             
             .newpage {
@@ -148,68 +147,39 @@
         
         <div id="config">
             <p>Raw XML</p>
-            <textarea id="rawxml"></textarea>
+            <textarea id="rawxml" style="width: 300px; height: 100px;">
+                
+                
+                
+            </textarea>
             <br />
             <input type="button" data-bind="click: processData" value="Create cards!" />
         </div>
 
         <div id="cards" data-bind="foreach: cards">
+
             
-            <!-- ko if: ($index() % 4) == 0 -->
-            <div class="card topleft">
-                
-            </div>
-            <!-- /ko -->
-            
-            <!-- ko if: ($index() % 4) == 1 -->
-            <div class="card topright">
-                
-            </div>
-            <!-- /ko -->
-            
-            <!-- ko if: ($index() % 4) == 2 -->
-            <div class="card bottomleft">
-                
-            </div>
-            <!-- /ko -->
-            
-            <!-- ko if: ($index() % 4) == 3 -->
-            <div class="card bottomright">
-                
-            </div>
-            <div class="newpage">
-                
-            </div>
-            <!-- /ko -->
-            
-            <!--
-            <div id="card">
+            <div class="card">
                 
                 <div id="card_Container">
                     
                     <div id="header">
                         <span id="issue_number">DSP-3431</span>
                         <span id="team_name">GRANITE</span>
-                        
-                        <div id="card_title" data-bind="text: title">
+                        <span id="story_points">3</span>
+                    </div>
+                    <div id="title_banner" data-bind="text: title">
+                    </div>
+                    <div id="card_epic"" data-bind="text: epic">
                             
                         </div>
-                        <div id="card_epic"" data-bind="text: epic">
-                            
-                        </div>
-                    </div>
-                    <div id="point_banner">
-                        <div>
-                            <span data-bind="text: storypoints"></span> <span>Point(s)</span>
-                        </div>
-                    </div>
                     <div id="card_body"  data-bind="html: details">
                         
                     </div>
                 </div>
                 
             </div>
-            -->
+            
             
         </div>
         
@@ -226,10 +196,10 @@
                 {
                     self.cards.push(
                         { 
-                            title: "Card Title 1", 
+                            title: "[DSP-3431] Create Typed DTOs for endpoints with an even longer title that needs to be clipped if it is too long", 
                             epic: "Epic Title 1",
                             storypoints: 3,
-                            details: "<p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p><p>At present, 2 endpoints do not use stros includes the 'Bills' and 'Usage' endpoints</p>"
+                            details: "&lt;p&gt;At present, 2 endpoints do not use strongly typed DTO models for their result data. This creates a problem, in that the entities should specify the data contract.&lt;/p&gt;&lt;p&gt;We are unable to verify endpoint data contracts at compile time. This also makes tracking schema/data contract changes through source control among multiple teams much harder.&lt;/p&gt;lt;p&gt;This includes the &apos;Bills&apos; and &apos;Usage&apos; endpoints&lt;/p&gt;"
                             
                         });
                     self.cards.push(
@@ -262,9 +232,13 @@
                         });
                 }
                 
+                self.processData();
+                
             }
 
             ko.applyBindings(new CardsViewModel());
+            
+            
             
         </script>
         
