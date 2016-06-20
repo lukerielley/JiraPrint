@@ -65,7 +65,7 @@
             
             #card_body {
                 padding: 0px 10px 0px 10px;
-                height: 150px;
+                height: 160px;
                 overflow: hidden;
                 font-size: 9pt;
                 margin-bottom: 10px;
@@ -186,56 +186,59 @@
                 
                 var self = this;
                 
-                var useMockData = false;
-
                 self.cards = ko.observableArray([]);
                 
-                if (useMockData)
-                {
-
-
-                } else {
-
-                }
-
                 self.processData = function()
                 {
+                    self.cards([]);
+
                     parser = new DOMParser();
                     txt = $("#rawxml").val();
-                    xmlDoc = parser.parseFromString(txt,"text/xml");
+
+                    try {
+                        xmlDoc = parser.parseFromString(txt,"text/xml");
                     
-                    if (xmlDoc)
-                    {
-                        // rss -> channel -> item
-                        var items = xmlDoc.getElementsByTagName("rss")[0].getElementsByTagName("channel")[0].getElementsByTagName("item");
-                        var itemCount = items.length;
-                        for (var i = 0; i < itemCount; i++)
+                        if (xmlDoc)
                         {
-                            var thisItem = items[i];
-                            self.cards.push(
-                                title: thisItem.getElementsByTagName("title")[0].innerHTML, 
-                                epic: "", 
-                                storypoints: "",
-                                details: thisItem.getElementsByTagName("description")[0].innerHTML, 
-                            );
+                            // rss -> channel -> item
+                            var items = xmlDoc.getElementsByTagName("rss")[0].getElementsByTagName("channel")[0].getElementsByTagName("item");
+                            var itemCount = items.length;
+                            for (var i = 0; i < itemCount; i++)
+                            {
+                                var thisItem = items[i];
+
+                                if (thisItem)
+                                {
+                                    if (
+                                        thisItem.getElementsByTagName("summary").length > 0 &&
+                                        thisItem.getElementsByTagName("description").length > 0
+                                    )
+
+                                    var description = $.parseHTML(thisItem.getElementsByTagName("description")[0].innerHTML);
+
+                                    var customFields = thisItem.getElementsByTagName("customfield");
+
+                                    self.cards.push({
+                                        title: thisItem.getElementsByTagName("summary")[0].innerHTML, 
+                                        epic: "", 
+                                        storypoints: "",
+                                        details: $(description).text()
+                                    });
+                                }
+                            }
                         }
+                    } catch(err) {
+                        alert(':( something went wrong. Check that you pasted the source XML correctly.');
                     }
                 }
-                
-                //self.processData();
-                
+
             }
 
             $(function() {
                 ko.applyBindings(new CardsViewModel());
             });
 
-            
-            
-            
-            
         </script>
-        
-        
+    
     </body>
 </html>
